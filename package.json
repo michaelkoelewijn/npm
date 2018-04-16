@@ -1,10 +1,11 @@
 {
-  "name": "faq",
+  "name": "@michaelkoelewijn91/faq",
   "version": "0.1.0",
   "description": "",
-  "main": "./src/index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "node_modules/.bin/webpack --config webpack.config.js --progress --colors --watch",
+    "publish": "npm publish --access=public"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/michaelkoelewijn/npm/issues"
   },
-  "homepage": "https://github.com/michaelkoelewijn/npm#readme"
+  "homepage": "https://github.com/michaelkoelewijn/npm#readme",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-es2015-ie": "^6.7.0",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14"
+  }
 }
