@@ -1,10 +1,11 @@
 {
-  "name": "@michaelkoelewijn91/faq",
-  "version": "1.0.0",
+  "name": "packagename",
+  "version": "0.1.0",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
     "watch": "node_modules/.bin/webpack --config webpack.config.js --progress --colors --watch",
+    "build": "webpack",
     "publish": "npm publish --access=public"
   },
   "repository": {
@@ -12,7 +13,7 @@
     "url": "git+https://github.com/michaelkoelewijn/npm.git"
   },
   "author": "Michael Koelewijn <imichael91@live.nl> (https://github.com/michaelkoelewijn)",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/michaelkoelewijn/npm/issues"
   },

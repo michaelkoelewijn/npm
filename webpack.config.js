@@ -3,10 +3,14 @@ const config = {
     mode: 'production',
     entry: './src/index.js',
     output: {
-        filename: 'faq.js',
+        filename: 'index.js',
         path: __dirname + '/dist',
-        library: 'FAQ',
+
+        //Not including these will add all dependencies in the build file
+        //Remove to get a shareable JS file
+        library: 'MyPackage',
         libraryTarget: 'umd',
+        
     },
     module: {
         rules: [
@@ -27,8 +31,5 @@ const config = {
 };
 
 module.exports = [{
-    ...config,
-    externals: [
-        'jquery'
-    ]
+    ...config
 }];
