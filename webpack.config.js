@@ -1,3 +1,6 @@
+const NAME = 'name';
+const DEPENDENCIES = ['jquery'];
+
 const config = {
     devtool: false,
     mode: 'production',
@@ -5,12 +8,8 @@ const config = {
     output: {
         filename: 'index.js',
         path: __dirname + '/dist',
-
-        //Not including these will add all dependencies in the build file
-        //Remove to get a shareable JS file
-        library: 'MyPackage',
+        library: NAME,
         libraryTarget: 'umd',
-        
     },
     module: {
         rules: [
@@ -21,7 +20,7 @@ const config = {
                     loader: 'babel-loader',
                     options: {
                         presets: [
-                            'es2015-ie',
+                            'env',
                         ],
                     },
                 },
@@ -30,6 +29,16 @@ const config = {
     }
 };
 
-module.exports = [{
-    ...config
-}];
+module.exports = [
+    {
+        ...config,
+        externals: DEPENDENCIES
+    },
+    {
+        ...config,
+        output: {
+            ...config.output,
+            filename: `${NAME}.bundle.js`,
+        }
+    }
+];
